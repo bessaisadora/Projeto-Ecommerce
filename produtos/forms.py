@@ -8,13 +8,10 @@ class TimePickerInput(forms.TimeInput):
         input_type = 'time'
 
 class UsuarioForm(forms.ModelForm):
-
     class Meta:
         model= Usuario
-        fields= '_all_'
+        fields= '__all__'  
     
         widgets = {
-            'minicursos': forms.CheckboxSelectMultiple(),
-            'sexo': forms.RadioSelect(),
-            'nascimento': forms.TimeInput(attrs={'type': 'date'}),
+            'data_nascimento': forms.TimeInput(attrs={'type': 'date'}),
         }

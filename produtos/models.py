@@ -13,6 +13,24 @@ class Produto(models.Model):
     categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
     imagem = models.ImageField(upload_to='produto/', blank=True, null=True, max_length=250)
 
+
+LISTA_SEXO= [
+    ('Masculino', 'Masculino'),
+    ('Feminino', 'Feminino'),
+]
+
+LISTA_CURSO= [
+    ('ADS', 'ADS'),
+    ('Agronomia', 'Agronomia'),
+    ('Química', 'Química'),
+]
+
+class MiniCurso(models.Model):
+    nome = models.CharField(max_length=150)
+
+    def __str__(self) -> str:
+        return self.nome
+
 # Create your models here.
 class Usuario(models.Model):
     nome = models.CharField(max_length=150)

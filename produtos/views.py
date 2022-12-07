@@ -31,3 +31,4 @@ def detalhes(request, id):
 
 def quem_somos (request):
     return render(request, 'quemsomos.html')
+
